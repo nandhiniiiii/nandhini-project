@@ -113,21 +113,21 @@
   <origin xyz="0.105612 -0.055284 -0.073647" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="right__1__1"/>
-  <axis xyz="-0.0 1.0 0.0"/>
+  <axis xyz="0.0 1.0 0.0"/>
 </joint>
 
 <joint name="Rev2" type="continuous">
   <origin xyz="0.105612 0.055284 -0.073647" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="left__2__1"/>
-  <axis xyz="-0.0 1.0 0.0"/>
+  <axis xyz="0.0 1.0 0.0"/>
 </joint>
 
 <joint name="Rev3" type="continuous">
   <origin xyz="-0.235777 0.0 0.073647" rpy="0 0 0"/>
   <parent link="mount__3__1"/>
   <child link="lidar__4__1"/>
-  <axis xyz="-0.0 0.0 1.0"/>
+  <axis xyz="0.0 0.0 1.0"/>
 </joint>
 
 <joint name="Rigid4" type="fixed">
