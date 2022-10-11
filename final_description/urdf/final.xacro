@@ -1,0 +1,139 @@
+<?xml version="1.0" ?>
+<robot name="final" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find final_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find final_description)/urdf/final.trans" />
+<xacro:include filename="$(find final_description)/urdf/final.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="0.18356128453429826 -1.5996654524996646e-15 -0.05680805435314482" rpy="0 0 0"/>
+    <mass value="1.0316915999493312"/>
+    <inertia ixx="0.001108" iyy="0.004172" izz="0.004984" ixy="-0.0" iyz="-0.0" ixz="-8e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://final_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://final_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right__1__1">
+  <inertial>
+    <origin xyz="-4.741433228816483e-07 -0.002500283132305464 1.449525037222621e-07" rpy="0 0 0"/>
+    <mass value="0.11097676048805946"/>
+    <inertia ixx="2.5e-05" iyy="5e-05" izz="2.5e-05" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.105612 0.055284 0.073647" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://final_description/meshes/right__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.105612 0.055284 0.073647" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://final_description/meshes/right__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left__2__1">
+  <inertial>
+    <origin xyz="-4.741433242139159e-07 0.002500283132302078 1.449525037222621e-07" rpy="0 0 0"/>
+    <mass value="0.11097676048805946"/>
+    <inertia ixx="2.5e-05" iyy="5e-05" izz="2.5e-05" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.105612 -0.055284 0.073647" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://final_description/meshes/left__2__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.105612 -0.055284 0.073647" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://final_description/meshes/left__2__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lidar__4__1">
+  <inertial>
+    <origin xyz="-4.7414332066120224e-07 -1.7741363933509998e-15 0.015000144952503573" rpy="0 0 0"/>
+    <mass value="0.4624031687002476"/>
+    <inertia ixx="0.000107" iyy="0.000107" izz="0.000145" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.235612 0.0 0.028647" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://final_description/meshes/lidar__4__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.235612 0.0 0.028647" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://final_description/meshes/lidar__4__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="mount__3__1">
+  <inertial>
+    <origin xyz="-0.23577747414332087 -1.6753265441593612e-15 0.06256695790974166" rpy="0 0 0"/>
+    <mass value="0.48439014073208936"/>
+    <inertia ixx="0.000144" iyy="0.000144" izz="0.00026" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.471389 0.0 0.102294" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://final_description/meshes/mount__3__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.471389 0.0 0.102294" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://final_description/meshes/mount__3__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Rev1" type="continuous">
+  <origin xyz="0.105612 -0.055284 -0.073647" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="right__1__1"/>
+  <axis xyz="-0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Rev2" type="continuous">
+  <origin xyz="0.105612 0.055284 -0.073647" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="left__2__1"/>
+  <axis xyz="-0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Rev3" type="continuous">
+  <origin xyz="-0.235777 0.0 0.073647" rpy="0 0 0"/>
+  <parent link="mount__3__1"/>
+  <child link="lidar__4__1"/>
+  <axis xyz="-0.0 0.0 1.0"/>
+</joint>
+
+<joint name="Rigid4" type="fixed">
+  <origin xyz="0.471389 0.0 -0.102294" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="mount__3__1"/>
+</joint>
+
+</robot>
